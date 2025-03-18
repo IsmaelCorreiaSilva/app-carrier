@@ -1,0 +1,36 @@
+{% extends "base.html" %}
+{% block content %}
+  <div class="m-8 flex flex-col items-center">
+    <div>
+      <form method="GET" action="{% url 'vehicle_types_list' %}">
+        <input class="p-2 text-base w-80 border rounded" type="text" name="search" placeholder="Buscar carro...">
+        <button type="submit" class="bg-blue-500 p-2 text-white font-bold hover:bg-blue-700 hover:text-white rounded">Buscar</button>
+        <a href="{% url 'vehicle_type_create' %}" class="bg-green-500 p-2 text-white font-bold hover:bg-green-600 hover:text-white rounded">Cadastrar</a>
+      </form>
+    </div>
+  
+    <div class="w-full mt-8">
+      {% if vehicle_types %}
+        <table class="w-full">
+          <thead>
+            <tr class="bg-gray-50 border-b-2 border-gray-200">
+              <th class="w-11/12 p-3 text-sm font-semibold tracking-wide text-center">Nome</th>
+              <th colspan="2" class="w-1/12 p-3 text-sm font-semibold tracking-wide text-center"> - </th>
+            </tr>
+          </thead>
+          <tbody>
+            {% for vehicle_type in vehicle_types %}
+            <tr>
+              <td class="w-11/12 p-3 text-sm font-semibold tracking-wide text-center">{{vehicle_type.name}}</td>
+              <td class="p-3 text-sm font-semibold tracking-wide text-center"><a href="{% url 'vehicle_type_update' vehicle_type.pk %}" class="bg-orange-400 p-2 text-white font-bold hover:bg-orange-600 hover:text-white rounded">Alterar</a></td>
+              <td class="p-3 text-sm font-semibold tracking-wide text-center"><a href="{% url 'vehicle_type_delete' vehicle_type.pk %}" class="bg-red-500 p-2 text-white font-bold hover:bg-red-700 hover:text-white rounded">Excuir</a></td>
+            </tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      {% else %}
+        <p class="no-results">Nenhum carro encontrado.</p>
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}
