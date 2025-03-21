@@ -2,7 +2,7 @@
 from django.contrib import admin
 from django.urls import path
 from cars.views import CreateCarView, ListCarsView, ListBrandView, CreateBrandView, ListVehicleTypeView, CreateVehicleTypeView, UptadeCarView, DeleteCarView, UpdateBrandView, DeleteBrandView, UpdateVehicleTypeView, DeleteVehicleTypeView
-from customers.views import CreateCustomerView, ListCustomersView, UpdateCustomerView, DeleteCustomerView
+from customers.views import CreateCustomerView, ListCustomersView, UpdateCustomerView, DeleteCustomerView, DetailCustomerView, CreateAddressView, DeleteAddressView
 from deliveries.views import CreateDeliveryRequestView
 
 urlpatterns = [
@@ -23,5 +23,8 @@ urlpatterns = [
     path('customer_create', CreateCustomerView.as_view(), name='customer_create'),
     path('customer/<int:pk>/update', UpdateCustomerView.as_view(), name='customer_update'),
     path('customer/<int:pk>/delete', DeleteCustomerView.as_view(), name='customer_delete'),
+    path('customer/<int:pk>/detail', DetailCustomerView.as_view(), name='customer_detail'),
+    path('custumer/<int:customer_id>/address_create', CreateAddressView.as_view(), name="address_create"),
+    path('address/<int:pk>/address_delete', DeleteAddressView.as_view(), name="address_delete"),
     path('delivery_request', CreateDeliveryRequestView.as_view(), name='delivery_request'),
 ]

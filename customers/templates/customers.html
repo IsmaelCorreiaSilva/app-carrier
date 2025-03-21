@@ -16,7 +16,7 @@
             <th class="w-5/12 p-3 text-sm font-semibold tracking-wide text-left">Name</th>
             <th class="w-3/12 p-3 text-sm font-semibold tracking-wide text-left">Email</th>
             <th class="w-3/12 p-3 text-sm font-semibold tracking-wide text-left">Telefone</th>
-            <th colspan="2" class="w-1/12 p-3 text-sm font-semibold tracking-wide text-center"> - </th>
+            <th colspan="3" class="w-1/12 p-3 text-sm font-semibold tracking-wide text-center"> - </th>
           </tr>
         </thead>
         <tbody>
@@ -25,6 +25,7 @@
             <td class="w-5/12 p-3 text-sm text-gray-700">{{customer.name}}</td>
             <td class="w-3/12 p-3 text-sm text-gray-700">{{customer.email}}</td>
             <td class="w-3/12 p-3 text-sm text-gray-700">{{customer.phone}}</td>
+            <td class="p-3 text-sm text-gray-700"><a href="{% url 'customer_detail' customer.pk %}" class="bg-gray-500 p-2 text-white font-bold hover:bg-gray-700 hover:text-white rounded">Detalhe</a></td>
             <td class="p-3 text-sm text-gray-700"><a href="{% url 'customer_update' customer.pk %}" class="bg-orange-400 p-2 text-white font-bold hover:bg-orange-600 hover:text-white rounded">Alterar</a></td>
             <td class="p-3 text-sm text-gray-700"><a href="{% url 'customer_delete' customer.pk %}" class="bg-red-500 p-2 text-white font-bold hover:bg-red-700 hover:text-white rounded">Excuir</a></td>
           </tr>

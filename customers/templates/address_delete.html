@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+  <div class="flex items-center justify-center">
+    <div class="p-4">
+      <div class="p-4">
+        <h1 class="text-2xl font-bold">Deletar Endereço</h1>
+      </div>
+      <div class="p-4">
+        <p>Tem certeza que deseja deletar esse endereço <strong>{{ object }}</strong>?</p>
+        <form method="post">
+          {% csrf_token %}
+          <div class="py-2">
+            <button type="submit" class="bg-red-500 p-2 text-white font-bold hover:bg-red-600 hover:text-white rounded">Deletar</button>
+            <a href="{% url 'customer_detail' object.customer_id %}" class="bg-blue-300 p-2 text-white font-bold hover:bg-blue-400 hover:text-white rounded">Cancelar</a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+{% endblock %}
