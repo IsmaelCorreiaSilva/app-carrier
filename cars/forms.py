@@ -5,13 +5,26 @@ class CarModelForm(forms.ModelForm):
     class Meta:
         model = Car
         fields = '__all__'
+        labels = {
+            'model': 'Modelo',
+            'brand': 'Marca',
+            'factory_year': 'Ano de Fabricação',
+            'model_year': 'Ano do Modelo',
+            'vehicle_type': 'Tipo do Veículo'
+        }
 
 class VehicleTypeModelForm(forms.ModelForm):
     class Meta:
         model = VehicleType
-        fields = '__all__'
+        fields = ['name']
+        labels = {
+            'name': 'Nome'
+        }
 
 class BrandModelForm(forms.ModelForm):
     class Meta:
         model = Brand
-        fields = '__all__'
+        fields = ['name']
+        labels = {
+            'name': 'Nome'
+        }
