@@ -65,7 +65,7 @@ class AddressForm(forms.ModelForm):
     def clean_zip_code(self):
         zip_code = self.cleaned_data.get('zip_code')
 
-        if len(zip_code) != 8:
+        if len(zip_code) != 10:
             raise forms.ValidationError('O campo CEP deve conter 8 caracteres!')
         
         return zip_code
