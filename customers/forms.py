@@ -36,10 +36,10 @@ class CustomerModelForm(forms.ModelForm):
         def clean_phone(self):
             phone = self.cleaned_data.get('phone')
 
-            if len(phone) < 8:
-                raise forms.ValidationError('O campo Telefone deve conter pelo mais 4 dígito!')
+            # if len(phone) < 8:
+            #     raise forms.ValidationError('O campo Telefone deve conter pelo mais 4 dígito!')
             
-            if len(phone) > 11:
+            if len(phone) != 15:
                 raise forms.ValidationError('O campo Telefone deve conter no máximo 11 dígitos')
             
             return phone

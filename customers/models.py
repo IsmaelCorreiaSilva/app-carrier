@@ -5,7 +5,7 @@ class Customer(models.Model):
     id = models.AutoField(primary_key=True)
     name = models.CharField(max_length=100)
     email = models.CharField(max_length=100, unique=True)
-    phone = models.CharField(max_length=11) 
+    phone = models.CharField(max_length=15) 
 
     def __str__(self):
         return self.name

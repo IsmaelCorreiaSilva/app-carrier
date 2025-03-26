@@ -48,8 +48,11 @@ class DeleteAddressView(DeleteView):
     
 
 class UpdateCustomerView(UpdateView):
-    ...
-
+    model = Customer
+    form_class = CustomerModelForm
+    template_name = 'customer_update.html'
+    success_url = 'detail'
+    
 class DeleteCustomerView(DeleteView):
     ...
 

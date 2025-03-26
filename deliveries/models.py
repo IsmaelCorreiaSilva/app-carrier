@@ -15,10 +15,15 @@ class Delivery(models.Model):
     
 class DeliveryRequest(models.Model):
     id = models.AutoField(primary_key=True)
-    request_date = models.DateField()
     customer = models.ForeignKey(Customer, on_delete=models.PROTECT, related_name='dr_customer')
-    zip_code = models.CharField(max_length=8)
+    request_date = models.DateField()
+    pickup_schedule= models.DateField()
+    zip_code = models.CharField(max_length=10)
     number = models.CharField(max_length=5)
+    street = models.CharField(max_length=100)
+    district = models.CharField(max_length=100)
+    city = models.CharField(max_length=100)
+    state = models.CharField(max_length=80)
     height = models.FloatField()
     depth = models.FloatField()
     width = models.FloatField()
