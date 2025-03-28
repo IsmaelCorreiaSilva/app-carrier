@@ -4,9 +4,12 @@ from django.urls import path
 from cars.views import CreateCarView, ListCarsView, ListBrandView, CreateBrandView, ListVehicleTypeView, CreateVehicleTypeView, UptadeCarView, DeleteCarView, UpdateBrandView, DeleteBrandView, UpdateVehicleTypeView, DeleteVehicleTypeView
 from customers.views import CreateCustomerView, ListCustomersView, UpdateCustomerView, DeleteCustomerView, DetailCustomerView, CreateAddressView, DeleteAddressView
 from deliveries.views import CreateDeliveryRequestView
+from accounts.views import LoginView, SignupView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('login/', LoginView.as_view(), name='login' ),
+    path('signup/', SignupView.as_view(), name='signup' ),
     path('cars/', ListCarsView.as_view(), name='cars_list' ),
     path('car_create/', CreateCarView.as_view(), name='car_create'),
     path('car/<int:pk>/update', UptadeCarView.as_view(), name='car_update' ),

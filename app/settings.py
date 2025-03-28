@@ -42,6 +42,7 @@ INSTALLED_APPS = [
     'cars',
     'deliveries',
     'customers',
+    'accounts',
 ]
 
 CRISPY_ALLOWED_TEMPLATE_PACKS = "tailwind"

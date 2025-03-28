@@ -17,7 +17,7 @@ class DeliveryRequest(models.Model):
     id = models.AutoField(primary_key=True)
     customer = models.ForeignKey(Customer, on_delete=models.PROTECT, related_name='dr_customer')
     request_date = models.DateField()
-    pickup_schedule= models.DateField()
+    pickup_schedule = models.DateField()
     zip_code = models.CharField(max_length=10)
     number = models.CharField(max_length=5)
     street = models.CharField(max_length=100)
